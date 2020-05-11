@@ -8,6 +8,8 @@ import just.optional.function.Predicate;
 import just.optional.function.Supplier;
 
 /**
+ * this is a copy of {@link java.util.Optional}
+ * <p>
  * A container object which may or may not contain a non-null value.
  * If a value is present, {@code isPresent()} will return {@code true} and
  * {@code get()} will return the value.
