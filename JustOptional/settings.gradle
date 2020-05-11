@@ -1,0 +1,3 @@
+rootProject.name='JustOptional'
+include ':app'
+include ':just-optional'

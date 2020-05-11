@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /* Use java 8. */
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+ext {
+    gitUrl              = 'https://github.com/groooooomit/just-optional.git'
+    siteUrl             = 'https://github.com/groooooomit/just-optional'
+    pom_packaging       = 'aar'
+    pom_groupId         = 'com.bfu'
+    pom_artifactId      = 'just-optional'
+    pom_name            = 'just-optional'
+    pom_description     = 'A copy of java.util.Optional'
+    pom_licenseName     = 'The Apache Software License, Version 2.0'
+    pom_licenseUrl      = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    pom_developerId     = 'groooooomit'
+    pom_developerName   = 'groooooomit'
+    pom_developerEmail  = 'fubofubo@hotmail.com'
+    pom_version         = '1.0.0'
+    bintray_repo        = 'just'
+    bintray_name        = 'optional'
+    bintray_desc        = '> A copy of java.util.Optional'
+    bintray_licenses    = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/groooooomit/jcenter/master/jcenter-maven-install.gradle'
+apply from: 'https://raw.githubusercontent.com/groooooomit/jcenter/master/jcenter-bintray-config.gradle'
+
+
