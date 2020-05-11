@@ -1,6 +1,7 @@
 package just.optional.function;
 
-import java.util.Objects;
+
+import just.optional.Objects;
 
 /**
  * Represents a function that accepts one argument and produces a result.
